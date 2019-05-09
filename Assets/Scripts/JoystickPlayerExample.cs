@@ -25,19 +25,6 @@ public class JoystickPlayerExample : MonoBehaviour
         var v1 = variableJoystick.Vertical;
         if (h1 == 0f && v1 == 0f)
         { // this statement allows it to recenter once the inputs are at zero 
-            Vector3 curRot = transform.localEulerAngles; // the object you are rotating
-            Vector3 homeRot;
-            //Debug.Log(curRot.y);
-            if (curRot.y > 180f)
-            { // this section determines the direction it returns home 
-
-                homeRot = new Vector3(0f, 359.999f, 0f); //it doesnt return to perfect zero 
-            }
-            else
-            {                                                                      // otherwise it rotates wrong direction 
-                homeRot = Vector3.zero;
-            }
-            transform.localEulerAngles = Vector3.Slerp(curRot, homeRot, Time.deltaTime * 2);
         }
         else
         {

@@ -63,7 +63,7 @@ public class weapon : MonoBehaviour {
 
 	}
 
-	public void shoot()
+	public void shootBullet()
 	{
 
 		//shooting logic
@@ -81,4 +81,23 @@ public class weapon : MonoBehaviour {
 
 
 	}
+
+    public void shootGrenade()
+    {
+
+        //shooting logic
+        numberBullets -= 1;
+        Instantiate(minePrefab, firePoint.position, firePoint.rotation);
+
+
+
+
+        //Debug.Log(player.transform.rotation.z);
+        //Debug.Log(player.transform.eulerAngles.z);
+        //Instantiate(flarePrefab,firePoint.position,firePoint.rotation);
+        //Instantiate(flarePrefab,firePoint.position,Quaternion.Euler(new Vector3(player.transform.eulerAngles.z, 90, 0)));
+        //Instantiate (flarePrefab, firePoint.position, Quaternion.Euler(new Vector3(90, 90, 0)));
+
+
+    }
 }

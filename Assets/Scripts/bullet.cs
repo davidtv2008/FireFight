@@ -14,6 +14,7 @@ public class bullet : MonoBehaviour {
 	//public Flare flare;
 	// Use this for initialization
 	public AudioClip bulletSound;
+    private int counterFix = 0;
 
 	void Start () {
 		rb.velocity = transform.forward *  speed;	
@@ -47,7 +48,8 @@ public class bullet : MonoBehaviour {
 		{
 
 			GameObject player1 = GameObject.Find("player1");
-			//weapon wp = player1.GetComponent<weapon>();
+
+            //weapon wp = player1.GetComponent<weapon>();
 
 			//GameObject[] objs = GameObject.FindGameObjectsWithTag("globalSettings");
         	//GlobalMenuSettings settings = objs[0].GetComponent<GlobalMenuSettings>();
@@ -61,34 +63,8 @@ public class bullet : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D hitInfo)
-	{	
-		//Debug.Log(hitInfo.name);
-
-		if(hitInfo.name == "beacon" || hitInfo.name == "flamegun" || hitInfo.name == "shield" || hitInfo.name == "landmine" || hitInfo.name == "newFlare(Clone)" || hitInfo.name == "newFlare 1(Clone)")
-		{
-			//if bullets collides with items or other bullets, let it pass through
-		}	
-		else
-		{
-			//if it hits an object set bullet speed to 0
-			//Debug.Log(rb.velocity);
-			rb.velocity = Vector3.zero;
-		}
-
-		if(hitInfo.name == "Fire"){
-			//when the bullet makes contact with mine explosion get rid of it.
-			Destroy(gameObject);
-			GameObject player1 = GameObject.Find("player1");
-			//weapon wp = player1.GetComponent<weapon>();
-
-			//GameObject[] objs = GameObject.FindGameObjectsWithTag("globalSettings");
-        //GlobalMenuSettings settings = objs[0].GetComponent<GlobalMenuSettings>();
-
-			//if(wp.numberBullets < settings.bullets){
-			//wp.numberBullets += 1;
-			//}
-			
-		}
-	}
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("bullet collides" + other.name);
+    }
 }

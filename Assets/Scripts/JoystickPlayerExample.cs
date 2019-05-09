@@ -6,16 +6,52 @@ public class JoystickPlayerExample : MonoBehaviour
 {
     public float speed;
     public VariableJoystick variableJoystick;
+    public GameObject cam1;
+    public GameObject cam2;
     public Rigidbody rb;
 
     public void FixedUpdate()
     {
         Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
         //Debug.Log(direction);
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+
+        var camera1 = cam1.GetComponent<Camera>();
+        var camera2 = cam2.GetComponent<Camera>();
+
+        if (camera1.enabled)
+        {
+            //force needs to be changed depending on camera view
+            rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+        }
+        else if (camera2.enabled)
+        {
+            //force needs to be changed depending on camera view
+            //Debug.Log(ForceMode.VelocityChange);
+            rb.AddForce(direction * (speed - 20) * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+        }
 
         //rotate the tank in joystick direction
         Twist();
+    }
+
+    public void switchView()
+    {
+        var camera1 = cam1.GetComponent<Camera>();
+        var camera2 = cam2.GetComponent<Camera>();
+
+        if (camera1.enabled)
+        {
+            camera1.enabled = false;
+            camera2.enabled = true;
+        }
+        else if (camera2.enabled)
+        {
+            camera2.enabled = false;
+            camera1.enabled = true;
+        }
     }
 
     //rotate in the direction of the joystick direction

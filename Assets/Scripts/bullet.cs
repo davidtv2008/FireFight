@@ -14,7 +14,6 @@ public class bullet : MonoBehaviour {
 	//public Flare flare;
 	// Use this for initialization
 	public AudioClip bulletSound;
-    private int counterFix = 0;
 
 	void Start () {
 		rb.velocity = transform.forward *  speed;	

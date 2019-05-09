@@ -67,47 +67,47 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\Light2D\Scripts\CustomSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightingSystem.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightingSystemPrefabConfig.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleGenerator.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleMesh.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\ObstacleCameraPostPorcessor.cs" />
-    <Compile Include="Assets\Light2D\Scripts\Point2.cs" />
-    <Compile Include="Assets\Light2D\Scripts\Util.cs" />
+    <Compile Include="Assets\ParticlePack\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
     <Compile Include="Assets\Scripts\bullet.cs" />
+    <Compile Include="Assets\Scripts\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\grenade.cs" />
     <Compile Include="Assets\Scripts\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerFollow.cs" />
+    <Compile Include="Assets\Scripts\rotateItem.cs" />
     <Compile Include="Assets\Scripts\weapon.cs" />
-    <None Include="Assets\Light2D\Resources\Shaders\FastBlur.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light70.shader" />
-    <None Include="Assets\Light2D\changelog.txt" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightIgnoreObstacles.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\NormalMap.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light9.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\NormalMappedLight.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light60.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightBase.cginc" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightBlender.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light1.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light50.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light80.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light20.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\AmbientLightComputer.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light40.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light90.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightOverlaySingleCamera.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightOverlay.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\TransparentDualColorNormalMapped.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\TransparentNormalMapped.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\AlphaReplace.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light30.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\ObstacleTexturePostProcessor.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightAuto.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\ParticlePack\EffectExamples\Misc Effects\Shaders\Dissolve.shader" />
+    <None Include="Assets\ParticlePack\EffectExamples\Misc Effects\Shaders\FireFly.shader" />
+    <None Include="Assets\Resources\Sounds\Mixer\MainMixer.mixer.txt" />
+    <None Include="Assets\ParticlePack\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
+    <None Include="Assets\Resources\Sounds\Rapture.mp3.meta.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Resources\Sounds\Mixer\MainMixer.mixer.meta.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\ParticlePack\EffectExamples\Misc Effects\Shaders\Respawn.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Resources\Sounds\Combat feat. Nicholas Standing (hearthis.at.mp3.meta.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\ParticlePack\EffectExamples\Magic Effects\Shaders\Ice.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -118,14 +118,14 @@
     <Reference Include="Unity.Timeline">
       <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2019.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -303,15 +303,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>/Applications/Unity/Hub/Editor/2019.1.0f2/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>/Users/blanca/School/IOS-Development/FireFight/FireFight/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/Applications/Unity/Hub/Editor/2019.1.0f2/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

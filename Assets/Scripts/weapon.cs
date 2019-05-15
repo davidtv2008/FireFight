@@ -13,6 +13,10 @@ public class weapon : MonoBehaviour {
 
 	public GameObject player;
 
+    public GameObject explotion;
+
+    public GameObject mineButtonText;
+
 	public int numberBullets = 0;
 	public int numberMines = 0;
 	
@@ -26,19 +30,29 @@ public class weapon : MonoBehaviour {
 		numberMines -= 1;
 		Instantiate(minePrefab,minePoint.position,minePoint.rotation);
 
-	}
 
-	public void shootBullet()
+
+
+    }
+
+    public void shootBullet()
 	{
 
 		numberBullets -= 1;
-		Instantiate(flarePrefab,firePoint.position,firePoint.rotation);  
+		Instantiate(flarePrefab,firePoint.position,firePoint.rotation);
+        ParticleSystem ps = explotion.GetComponent<ParticleSystem>();
+        ps.Play();
 	}
 
     public void shootGrenade()
     {
-        //shooting logic
-        numberBullets -= 1;
-        Instantiate(minePrefab, firePoint.position, firePoint.rotation);
+        if(numberMines > 0)
+        {
+            numberMines -= 1;
+            Instantiate(minePrefab, firePoint.position, firePoint.rotation);
+            var text = mineButtonText.GetComponent<UnityEngine.UI.Text>();
+            text.text = numberMines.ToString();
+        }
+
     }
 }

@@ -16,25 +16,7 @@ public class bullet : MonoBehaviour {
 	public AudioClip bulletSound;
 
 	void Start () {
-		rb.velocity = transform.forward *  speed;	
-
-		//GetComponent<AudioSource> ().playOnAwake = true;
-
-
-		//GetComponent<AudioSource> ().clip = bulletSound;
-
-		//GameObject[] objs = GameObject.FindGameObjectsWithTag("globalSettings");
-        //GlobalMenuSettings settings = objs[0].GetComponent<GlobalMenuSettings>();
-        
-
-
-		//AudioSource asource = GetComponent<AudioSource>();
-        //asource.volume = settings.volume / 3f;
-
-		//AudioSource.PlayClipAtPoint(bulletSound, transform.position, settings.volume);
-
-		//GetComponent<AudioSource> ().Play();
-		
+		rb.velocity = transform.forward *  speed;
 	}
 
 	void Update(){
@@ -62,8 +44,24 @@ public class bullet : MonoBehaviour {
 		}
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider obj)
     {
-        Debug.Log("bullet collides" + other.name);
+
+        //destroy bullet upon contact with player
+        /*
+        if(obj.name == "player")
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log(obj.name);
+            rb.velocity = Vector3.zero;
+            Destroy(gameObject);
+        }
+        */
+
+        Destroy(gameObject);
+
     }
 }

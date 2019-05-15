@@ -17,7 +17,7 @@ public class JoystickPlayerExample : MonoBehaviour
 
 
         var camera1 = cam1.GetComponent<Camera>();
-        var camera2 = cam2.GetComponent<Camera>();
+        //var camera2 = cam2.GetComponent<Camera>();
 
         if (camera1.enabled)
         {
@@ -25,6 +25,7 @@ public class JoystickPlayerExample : MonoBehaviour
             rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
         }
+        /*
         else if (camera2.enabled)
         {
             //force needs to be changed depending on camera view
@@ -32,12 +33,12 @@ public class JoystickPlayerExample : MonoBehaviour
             rb.AddForce(direction * (speed - 20) * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
         }
-
+        */
         //rotate the tank in joystick direction
         Twist();
     }
 
-    public void switchView()
+    /*public void switchView()
     {
         var camera1 = cam1.GetComponent<Camera>();
         var camera2 = cam2.GetComponent<Camera>();
@@ -53,18 +54,23 @@ public class JoystickPlayerExample : MonoBehaviour
             camera1.enabled = true;
         }
     }
-
+    */
     //rotate in the direction of the joystick direction
     void Twist()
     {
         var h1 = variableJoystick.Horizontal; // set as your inputs 
         var v1 = variableJoystick.Vertical;
+
         if (h1 == 0f && v1 == 0f)
-        { // this statement allows it to recenter once the inputs are at zero 
+        { // this statement allows it to recenter once the inputs are at zero
+             
         }
         else
         {
-            transform.localEulerAngles = new Vector3(0f, Mathf.Atan2(h1, v1) * 180 / Mathf.PI, 0f); // this does the actual rotaion according to inputs
+            //Debug.Log(h1);
+            //Debug.Log(v1);
+            transform.localEulerAngles = new Vector3(0f, Mathf.Atan2(h1, v1) * 180 / Mathf.PI, 0f);
+            //transform.localEulerAngles = new Vector3(0f, Mathf.Atan2(h1, v1) * 180 / Mathf.PI, 0f); // this does the actual rotaion according to inputs
         }
     }
 }

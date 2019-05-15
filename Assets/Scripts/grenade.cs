@@ -103,6 +103,8 @@ public class grenade : MonoBehaviour
 
         audioData.Play(0);
 
+        rb.velocity = transform.forward * 0;
+
 
         Destroy(explosion, exp.main.duration);
         Destroy(gameObject, exp.main.duration);
@@ -111,6 +113,6 @@ public class grenade : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("bullet collides" + other.name);
+        Explode();
     }
 }

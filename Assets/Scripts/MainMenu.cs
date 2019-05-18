@@ -57,7 +57,7 @@ public class MainMenu : MonoBehaviour {
     public void ReturnMainMenu(){
         GameObject gObject = GameObject.Find("StartButton");
         //Set this GameObject you clicked as the currently selected in the EventSystem
-        es.SetSelectedGameObject(gObject);
+        //es.SetSelectedGameObject(gObject);
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("globalSettings");
         GlobalMenuSettings settings = objs[0].GetComponent<GlobalMenuSettings>();

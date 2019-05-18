@@ -19,9 +19,11 @@ public class weapon : MonoBehaviour {
 
 	public int numberBullets = 0;
 	public int numberMines = 0;
-	
-	// Update is called once per frame
-	void Update () {
+
+    public AudioSource audioData;
+
+    // Update is called once per frame
+    void Update () {
 
 	}
 
@@ -39,7 +41,9 @@ public class weapon : MonoBehaviour {
 	{
 
 		numberBullets -= 1;
-		Instantiate(flarePrefab,firePoint.position,firePoint.rotation);
+        audioData.Play(0);
+
+        Instantiate(flarePrefab,firePoint.position,firePoint.rotation);
         ParticleSystem ps = explotion.GetComponent<ParticleSystem>();
         ps.Play();
 	}

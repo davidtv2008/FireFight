@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -8,7 +10,13 @@ public class Player : MonoBehaviour
     public float healthOffset = 0f;
     public int lives = 3;
     private bool endGame = false;
+    private bool gameOver = false;
     private bool pause = false;
+    public GameObject pauseTitle;
+    public GameObject resumeButton;
+    public GameObject restartButton;
+    public GameObject nextLevelButton;
+    public GameObject lighting;
     public GameObject livesText;
     private bool colorChange = false;
     public bool shield = false;
@@ -17,6 +25,7 @@ public class Player : MonoBehaviour
 
     //gameobject list of things to pause
     public GameObject[] pausableObj;
+    public GameObject pauseMenu;
 
     //create a list for storing items the player picks up
     public List<System.String> inventory;
@@ -34,6 +43,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         inventory = new List<System.String>();
+
+        lighting.SetActive(false);
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("globalSettings");
         GlobalMenuSettings settings = objs[0].GetComponent<GlobalMenuSettings>();
@@ -127,12 +138,14 @@ public class Player : MonoBehaviour
                     x.SetActive(false);
                 }
 
-                //pausableObj = null;
+
+                pauseMenu.SetActive(true);
+                nextLevelButton.SetActive(false);
+
 
             }
             else
             {
-                //pausableObj = GameObject.FindGameObjectsWithTag("pausable");
                 Debug.Log("restore items");
                 pause = false;
                 int count = 0;
@@ -142,7 +155,9 @@ public class Player : MonoBehaviour
                     x.SetActive(true);
                     count++;
                 }
-                //pausableObj = null;
+
+                pauseMenu.SetActive(false);
+
             }
 
         }
@@ -154,6 +169,46 @@ public class Player : MonoBehaviour
         Debug.Log("main menu");
     }
 
+    public void nextLevel()
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        switch (currentScene.name)
+        {
+            case "Level 1":
+                SceneManager.LoadScene("Level 2");
+                break;
+            case "Level 2":
+                SceneManager.LoadScene("Level 3");
+                break;
+            case "Level 3":
+                gameCompleted();
+                break;
+        }
+    }
+
+    public void gameCompleted()
+    {
+        var text = pauseTitle.GetComponent<UnityEngine.UI.Text>();
+        text.text = "GAME COMPLETED";
+    ;
+    }
+
+public void resumeGame()
+    {
+        pause = false;
+        foreach (GameObject x in pausableObj)
+        {
+            x.SetActive(true);
+        }
+
+        pauseMenu.SetActive(false);
+    }
+
+    public void MainScreen()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void fire()
     {
         Debug.Log("Fire weapon");
@@ -162,6 +217,30 @@ public class Player : MonoBehaviour
     public void placeMine()
     {
         Debug.Log("Place Mine");
+    }
+
+    private void gameOverScreen()
+    {
+        foreach (GameObject x in pausableObj)
+        {
+            x.SetActive(false);
+        }
+
+        pauseMenu.SetActive(true);
+        resumeButton.SetActive(false);
+        nextLevelButton.SetActive(false);
+
+
+    Debug.Log("gameover");
+        var text = pauseTitle.GetComponent<UnityEngine.UI.Text>();
+        text.text = "GAME OVER";
+
+    }
+
+    public void restartScene()
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 
     private void OnTriggerEnter(Collider obj)
@@ -191,8 +270,9 @@ public class Player : MonoBehaviour
                     if (lives == 0)
                     {
                         endGame = true;
+                        gameOver = true;
                         Debug.Log("Game Over");
-                        mainMenu();
+                        gameOverScreen();
                     }
 
                 }
